@@ -43,10 +43,16 @@ const songs = [
 
 document.querySelector("#accessibilityButton").addEventListener("click", displayAccesibility);
 var accesoryPanel = document.querySelector("#accessibilityPanel");
-
+var isDisplayed = false;
 function displayAccesibility(){
-    console.log(accesoryPanel.style.hidden);
-    accesoryPanel.style.hidden = "inline";
+  if(!isDisplayed){
+    console.log(accesoryPanel.style.display);
+    accesoryPanel.style.display = "inline";
+    isDisplayed=true;
+  }else{
+    accesoryPanel.style.display = "none";
+    isDisplayed=false;
+  }
 }
 
   
