@@ -1,0 +1,262 @@
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  transition: all 0.3s ease;
+  padding: 30px;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    url("https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: -1;
+}
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+.subtitle {
+  color: #555;
+  font-size: 1.4rem;
+}
+/* DESCRIPTION */
+.description {
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color:rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  backdrop-filter: blur(5px);
+}
+.description p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+/* SONGS FLEX */
+.songs-container {
+  display: flex;
+  flex-direction: row;
+    flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+/* SONG CARD */
+
+.song-card {
+   width: 300px; 
+   height:450px;
+   margin:20px;
+   background-color: rgba(255,255,255,0.92);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+  padding-bottom: 20px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.song-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.song-card audio{
+    margin-top: -20px;
+    z-index:20;
+}
+.song-card h2 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.song-card p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/*BUTTONS */
+.play-button {
+  display: block;
+  margin: 2px auto;
+  padding: 12px 22px;
+  border: 5px solid white;
+  border-radius: 10px;
+   background-color: #111;
+  color: white;
+  cursor: pointer;
+  }
+
+#idButton{
+    text-align: right;
+}
+.vote-button {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 48px;
+  border: none;
+  border-radius: 12px;
+  background-color: #4a90e2;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+}
+
+.vote-button:hover {
+  background-color: #2563eb;
+}
+/* STARS */
+.stars {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 10px;
+  min-height: 40px;
+}
+/* ACCESSIBILITY BUTTON */
+.accessibility-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 14px;
+  background-color: #111;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* PANEL */
+
+.accessibility-panel {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 400px;
+  background-color: rgba(255,255,255,0.97);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.accessibility-panel h2 {
+  margin-bottom: 20px;
+   font-size: 2rem;
+}
+
+.accessibility-panel h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.accessibility-panel label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.accessibility-panel select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.checkbox-label {
+  margin-top: 15px;
+}
+
+.panel-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+
+}
+
+.panel-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+/* LIGHT THEME */
+.light-theme {
+  background-color: #f4f4f4;
+  color: #222;
+}
+/* DARK THEME */
+.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+.dark-theme .description,
+.dark-theme .song-card,
+.dark-theme .accessibility-panel {
+    background-color: rgba(30, 30, 30, 0.95);
+  color: white;
+}
+.dark-theme .subtitle {
+  color: #ccc;
+}
+
+/* FONT SIZES */
+.font-small {  font-size: 14px;}
+.font-medium {  font-size: 18px;}
+.font-large {  font-size: 24px;}
+
+/* HIGH CONTRAST */
+
+.high-contrast {
+  background-color: black !important;
+  color: yellow !important;
+}
+.high-contrast .song-card,
+.high-contrast .description,
+.high-contrast .accessibility-panel {
+  background-color: black !important;
+  color: yellow !important;
+  border: 2px solid yellow;
+}
+/* READABLE FONT */
+.readable-font {
+  font-family: Verdana, sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}

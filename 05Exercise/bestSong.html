@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song of the Year</title>
+  <link href="bestSong.css" rel="stylesheet" type="text/css"/>
+ </head>
+<body class="light-theme font-medium">
+  <!-- ACCESSIBILITY BUTTON -->
+   <button id="accessibilityButton" class="accessibility-button">
+    ⚙️ Accessibility
+  </button>
+   <!-- ACCESSIBILITY PANEL -->
+  <div id="accessibilityPanel" class="accessibility-panel hidden">
+    <form id="accessibilityForm">
+      <h2>Accessibility Settings</h2>
+      <!-- THEME -->
+      <label for="themeSelect">Theme</label>
+      <select id="themeSelect">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+
+      <!-- FONT SIZE -->
+      <h3>Text Size</h3>
+      <label> <input  type="radio"  name="fontSize" value="small" > Small </label>
+      <label> <input type="radio"  name="fontSize" value="medium" checked> Medium </label>
+      <label> <input type="radio"  name="fontSize"  value="large" >   Large   </label>
+
+      <!-- EXTRA OPTIONS -->
+      <label class="checkbox-label">  <input type="checkbox" id="highContrast">  High Contrast    </label>
+      <label class="checkbox-label">  <input type="checkbox" id="readableFont">   Readable Font    </label>
+      <!-- BUTTONS -->
+      <div class="panel-buttons">
+        <button type="submit"> Accept  </button>
+        <button type="button" id="cancelButton">  Cancel    </button>
+      </div>
+    </form>
+  </div>
+  <!-- HEADER -->
+  <header>
+    <h1>🎵 Song of the Year Awards</h1>
+    <p class="subtitle">
+      Vote for your favorite song of the year
+    </p>
+  </header>
+  
+  <!-- DESCRIPTION -->
+  <section class="description">
+    <p>  Welcome to the Song of the Year Awards platform, a music celebration where fans from all around
+    the world can vote for their favorite hit songs. This interactive platform allows users to explore
+    some of the most popular tracks of the year and  support the artists they love the most. </p>
+    <p>     Each song card includes the album cover, the  title of the song, the artist name and a voting
+    button. Every time a user votes for a song,  the total number of votes increases and a new
+    star is added to visually represent the score    obtained by that song during the contest.    </p>
+    <p>    The goal of this project is not only to practice  JavaScript programming concepts such as arrays,
+    objects, loops, DOM manipulation and events,  but also to improve the accessibility and user
+    experience of a modern web application.   </p>
+  </section>
+
+  <!-- SONGS CONTAINER -->
+ <!--<article class="song-card">
+      
+       <img src="images/As_it_was.png" alt=" album cover">
+           <audio id="index">
+              <source src="audio/Harry_Styles_As_It_Was.MP3" type="audio/mp3">
+           </audio>
+           <button  class="play-button"  >
+               ▶ Play / Pause
+           </button>
+            <h2>As it was</h2>
+           <p>$Harry Styles</p>
+           
+           <button class="vote-button" >Vote</button>
+           <div class="stars" id="stars-0">votes stars</div>
+           <p id="votes-${index}">Total votes: 5</p>
+      
+  </article>-->
+  <main id="songsContainer" class="songs-container"></main>
+  <script src="bestSong.js" type="text/javascript"></script>
+</body>
+</html>
