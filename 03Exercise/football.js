@@ -73,7 +73,10 @@ function createButtons(){
     }
     const word = sentence.value;
     for(i=0;i<word.length;i++){
-        buttonContainer = create;
+        letterButton = document.createElement('input');
+        letterButton.type = "button";
+        letterButton.value = word[i];
+        buttonContainer.appendChild(letterButton)
     }
 
 }
