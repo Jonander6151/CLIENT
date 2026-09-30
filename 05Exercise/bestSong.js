@@ -84,10 +84,28 @@ for(let i=0;i<4;i++){
   cloneCard.querySelector("img").src = songs[i].cover;
   cloneCard.querySelector("h2").textContent = songs[i].title;
   cloneCard.querySelector("p").textContent = songs[i].artist;
+  cloneCard.querySelector("source").src = songs[i].sound;
 }
 
 var songCards = document.querySelectorAll(".song-card");
 
 
 musicButtons = document.querySelectorAll(".play-button");
+
+musicButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".song-card");
+    const audio = card.querySelector("audio");
+    if (audio.paused) {
+      document.querySelectorAll("audio").forEach(otherAudio => {
+        if (otherAudio !== audio) {
+          otherAudio.pause();
+        }
+      });
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+});
 

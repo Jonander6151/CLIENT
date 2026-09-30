@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="cinema.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <h1>HERRIKO ANTZOKIA </h1>
+            <H2>NEXT SESSION PROGRAM</H2>
+        </header>
+        <div id="todayFilms">
+     
+         </div>
+        
+        <div id="elements">
+           
+        </div>    
+        <div id="divBuyTickets">
+            <h2 id="screen"></h2>  
+            <div>
+                <form id="formbuy">
+                    <fieldset>
+                        <legend>TICKETS FOR THE NEXT SESSION</legend>
+                        <label for="numTickets">NUMBER OF TICKETS</label> 
+                        <input id="numTickets" name="numTickets" type="text" required >
+                        <label for="ticketType">TYPE OF TICKET</label> 
+                        <select name="ticketType" id="ticketType"> 
+                                      <option value="8" selected>Normal 
+                                      <option value="5" >Discount 
+                        </select>                
+                        <label for="price">PRICE</label>  <input id="price" name="price" type="text" disabled>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <label for="total">TOTAL</label>    
+                        <input id="total" name="total" type="text" >
+                        <button type="button" id="btnBuy" >BUY </button>
+                    </fieldset>
+                </form>  
+            </div>               
+        </div>
+        <script src="cinema.js" type="text/javascript"></script>
+    </body>
+</html>

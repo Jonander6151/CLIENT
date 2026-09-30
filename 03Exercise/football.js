@@ -68,7 +68,7 @@ formSurvey.addEventListener("submit", function(e){
 });
 
 function createButtons(){
-    if(isNaN(sentence.value)){
+    if(null === (sentence.value) | (sentence.value) === undefined){
         alert("ERROR! You have not entered a word!");
     }
     const word = sentence.value;
