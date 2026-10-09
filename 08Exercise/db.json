@@ -1,0 +1,94 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Ane",
+      "password": "ane123",
+      "age": 34,
+      "city": "Bilbao",
+      "points": 340,
+      "typePlayer": "normal"
+    },
+    {
+      "id": 3,
+      "name": "Miren",
+      "password": "miren123",
+      "age": 12,
+      "city": "Gernika",
+      "points": 1000,
+      "typePlayer": "normal"
+    },
+    {
+      "id": 5,
+      "name": "Igor",
+      "password": "igor123",
+      "age": 19,
+      "city": "Bilbao",
+      "points": 1002,
+      "typePlayer": "admin"
+    },
+    {
+      "id": 6,
+      "name": "Sara",
+      "password": "sara123",
+      "age": 19,
+      "city": "Gernika",
+      "points": 10000,
+      "typePlayer": "admin"
+    },
+    {
+      "id": 14,
+      "name": "Alberto",
+      "password": "Albert123",
+      "age": 23,
+      "city": "Donostia",
+      "points": 123,
+      "typePlayer": "normal"
+    },
+    {
+      "id": 15,
+      "name": "Sara",
+      "password": "Sara123",
+      "age": 22,
+      "city": "Eibar",
+      "points": 234,
+      "typePlayer": "normal"
+    },
+    {
+      "id": 16,
+      "name": "Alan",
+      "password": "222",
+      "age": 23,
+      "city": "Donostia",
+      "points": 234,
+      "typePlayer": "normal"
+    },
+    {
+      "name": "Valeria",
+      "password": "1234",
+      "age": 23,
+      "city": "Caracas",
+      "points": 123,
+      "typePlayer": "normal",
+      "id": 17
+    },
+    {
+      "name": "alma",
+      "password": "alma123",
+      "age": 78,
+      "city": "Bilbao",
+      "points": 600,
+      "typePlayer": "normal",
+      "id": 19
+    },
+    {
+      "id": 20,
+      "name": "Fermin",
+      "password": "123",
+      "age": 23,
+      "city": "Bilbao",
+      "points": 12,
+      "typePlayer": "normal"
+    }
+  ]
+}

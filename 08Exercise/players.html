@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD Players</title>
+  <link href="CSS/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <h1>Players</h1>
+      <table id="tablePlayers">
+    <thead>
+      <tr>
+        <th>Name</th><th>Age</th><th>City</th><th>Points</th><th>Type</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+  <h3>Player management </h3>
+  <form id="formPlayer">
+    <input type="hidden" id="id">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="number" id="age" placeholder="Age" required>
+    <input type="text" id="city" placeholder="City" required>
+    <input type="number" id="points" placeholder="Points" required>
+    <select id="typePlayer">
+      <option value="normal">Normal</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button type="submit" id="btnSave">Save</button>
+  </form>
+  <script src="JS/players.js" ></script>
+ </body>
+</html>
+
