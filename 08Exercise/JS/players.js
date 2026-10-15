@@ -7,7 +7,10 @@ const inputName = document.querySelector("#name");
 const inputPassWord = document.querySelector("#password");
 const inputAge = document.querySelector("#age");
 const inputCity = document.querySelector("#city");
-const inputPoints = document.querySelector("points");
+const inputPoints = document.querySelector("#points");
+const inputType = document.querySelector("#typePlayer");
+const formulary = document.querySelector("#formPlayer");
+let globalId = -1;
 
 async function getPlayers() {
     try{
@@ -42,10 +45,6 @@ async function getPlayers() {
     });
     }
 
-    async function changePlayer(id) {
-        
-    }
-
     async function deletePlayer(id) {
         if(confirm("Are you sure that you want to delete the player?")){
             try{
@@ -58,18 +57,49 @@ async function getPlayers() {
         }
     }
 
-    form.addEventListener("submit", async(e) =>{
+    async function changePlayer(id) {
+        editing = true;
+        globalId =id;
+        const data = await fetch(`${API_URL}/${id}`);
+        const playerData = await data.json();
+        console.log(playerData);
+        inputName.value = `${playerData.name}`;
+        inputPassWord.value = `${playerData.password}`;
+        inputAge.value = `${playerData.age}`;
+        inputCity.value = `${playerData.city}`;
+        inputPoints.value = `${playerData.points}`;
+        btnSave.textContent = "Editing";
+    }
+
+    formulary.addEventListener("submit", async(e) =>{
         e.preventDefault();
-        const playerData={
-            name:inputName.value;
-            password:inputPassWord.value;
-            age:inputAge.value;
-            city:inputCity.value;
-            points:inputPoints.value;
-        }
-    })
-
-
-
-
+        const playersData={
+            "id": globalId,
+            "name": inputName.value,
+            "password": inputPassWord.value,
+            "age": inputAge.value,
+            "city": inputCity.value,
+            "points": inputPoints.value,
+            "typePlayer": inputType.value
+            }
+            console.log(playersData);
+            if(globalId != -1){
+                await fetch(`${API_URL}/${id}`, {
+                method: 'PUT',
+                    body: JSON.stringify({
+                    id: playersData.id,
+                    name: playersData.name,
+                    password: playersData.password,
+                    age: playersData.age,
+                    city: playersData.city,
+                    points: playersData.points,
+                    typePlayer: playersData.typePlayer
+                    })
+                });
+            globalId=-1;
+            }else{
+                
+            }
+        })
+        // npx json-server@0.17.4 --watch db.json
 
