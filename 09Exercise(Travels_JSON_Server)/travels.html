@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/travels.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body>
+        <header>
+            <p> <img src="img/logoviajes.png" alt=""/>
+            </p>
+       </header>
+        <nav>
+        <a href="#">ALL</a>
+        <a href="#">AFRICA</a>
+        <a href="#"> AMERICA</a>
+        <a href="#">ASIA</a>
+        <a href="#" >EUROPE</a>
+        <a href="#" >OCEANIA</a>
+        <a href="#" id="createTravel">CREATE TRAVEL</a>
+        </nav>
+        <section id="section">         
+         <div class="card">
+            <img src="" alt="">
+            <h3>city</h3>
+            <p><strong>País:</strong> country </p>
+            <p><strong>Continente:</strong> continent</p>
+            <p><strong>Precio:</strong> prie €</p>
+            <button id="btnEdit">Edit</button>
+            <button id="btnDetele">Delete</button>
+             </div>
+        </section> 
+        
+        <div id="formContinents" >
+        <h3>Edit / Create Travel</h3>
+        <input type="text" id="city" placeholder="City">
+        <input type="text" id="country" placeholder="Country">
+        <label for="file-chooser">Image:</label>
+        <input type="file" id="file-chooser" accept="image/*">
+       
+        <div id="previewImage" style="margin-top:10px;"></div>
+        <label for="continent">Continent:</label>
+            <select id="continent">
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceanía</option>
+            </select>   
+        <input type="number" id="price" placeholder="Price">
+        <button id="save">Save</button>
+        <button id="cancel">Cancel</button>
+       
+    </div>
+        <script src="js/travels.js" type="text/javascript"></script>
+    </body>
+    
+</html>

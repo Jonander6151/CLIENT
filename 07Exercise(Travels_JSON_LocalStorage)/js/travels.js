@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'travelsData';
 let travels = [];
 let editingIndex = null;
-let currentBase64Image = '';
+let currentImage = '';
 
 const section = document.getElementById('section');
 const navLinks = document.querySelectorAll('nav a');
@@ -42,9 +42,7 @@ function saveToStorage() {
 function renderTravels(filter = 'ALL') {
     section.innerHTML = '';
 
-    const filteredTravels = (filter === 'ALL')
-        ? travels
-        : travels.filter(t => t.continent.toUpperCase() === filter.toUpperCase());
+    const filteredTravels = (filter === 'ALL') ? travels : travels.filter(t => t.continent.toUpperCase() === filter.toUpperCase());
 
     filteredTravels.forEach((travel) => {
         const realIndex = travels.indexOf(travel);
@@ -92,8 +90,8 @@ function setupEventListeners() {
         if (file) {
             const reader = new FileReader();
             reader.onload = function (evt) {
-                currentBase64Image = evt.target.result;
-                previewImage.innerHTML = `<img src="${currentBase64Image}" alt="Preview">`;
+                currentImage = evt.target.result;
+                previewImage.innerHTML = `<img src="${currentImage}" alt="Preview">`;
             };
             reader.readAsDataURL(file);
         }
@@ -115,7 +113,7 @@ function setupEventListeners() {
             country,
             continent,
             price,
-            image: currentBase64Image
+            image: currentImage
         };
 
         if (editingIndex !== null) {
@@ -151,9 +149,9 @@ function openEditForm(index) {
     continentSelect.value = travel.continent;
     priceInput.value = travel.price;
 
-    currentBase64Image = travel.image || '';
-    if (currentBase64Image) {
-        previewImage.innerHTML = `<img src="${currentBase64Image}" alt="Preview">`;
+    currentImage = travel.image || '';
+    if (currentImage) {
+        previewImage.innerHTML = `<img src="${currentImage}" alt="Preview">`;
     } else {
         previewImage.innerHTML = '';
     }
@@ -184,5 +182,5 @@ function resetForm() {
     previewImage.innerHTML = '';
     continentSelect.value = 'Africa';
     priceInput.value = '';
-    currentBase64Image = '';
+    currentImage = '';
 }
