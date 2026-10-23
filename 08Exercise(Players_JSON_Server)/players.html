@@ -33,3 +33,115 @@
  </body>
 </html>
 
+<!-- document.addEventListener("DOMContentLoaded", getTravels);
+const formulary = document.querySelector('#formContinents');
+const travelsSpace = document.querySelector('#section');
+const sections = document.querySelectorAll('nav a');
+const travels = document.querySelectorAll('section div');
+
+// LOADS THE DATA FROM THE JSON SERVER
+async function getTravels() {
+    try{
+        const data = await fetch(API_URL);
+        const dataTravels = await data.json();
+        const dataI = await fetch(IMG_URL);
+        const dataImages = await dataI.json();
+        console.log(dataTravels);
+        console.log(dataImages);
+        showAllData(dataTravels, dataImages);
+    }catch(error){
+        console.error("An error has ocurred getting the data!");
+    }
+}
+
+// SHOWS ALL THE DATA AT THE MAIN WEBPAGE
+function showAllData(dataTravels, dataImages){
+    formulary.style.display = 'none';
+    travelsSpace.className="section";
+    travelsSpace.innerHTML='';
+    dataTravels.forEach(element =>{
+        const travel = document.createElement("div");
+        travel.className="card";
+        if(element.fileImage==""){
+            image=element.image;
+        }else{
+            image=element.fileImage;
+        }
+
+        travel.innerHTML=`
+        <img src=${image} alt="${element.city}">
+            <h3>${element.city}</h3>
+            <p><strong>País:</strong> ${element.country} </p>
+            <p><strong>Continente:</strong> ${element.continent}</p>
+            <p><strong>Precio:</strong> ${element.price} €</p>
+            <button id="btnEdit">Edit</button>
+        <button id="btnDetele">Delete</button>
+        `;
+        document.querySelector("#btnEdit").addEventListener("click", editTravel(element));
+        document.querySelector("#btnDetele").addEventListener("click", deleteTravel(element.id));
+        travelsSpace.appendChild(travel);
+    }
+    )
+}
+
+sections.forEach((filter)=>{
+    filter.addEventListener("click",function(e){
+        travelsSpace
+    })
+
+})
+
+// DELETES A TRAVEL WICH HAVES THIS ID
+async function deleteTravel(id) {
+    if(confirm("Are you sure that you want to delete the travel?")){
+    try {
+            await fetch(`${API_URL}/${id}`, {
+                method: 'DELETE'
+            })
+            getTravels();
+        } catch (error) {
+            console.log("ERROR: It's not posible to delete the travel!");
+        }
+    }
+}
+
+// async function editTravel(travel) {
+//     formulary
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //     travelImages.forEach(img =>{
+    //         const option= document.createElement("option");
+    //         option.value = img.imagen;
+    //         option.textContent = img.ciudad;
+    //         select.appendChild(option);
+    //     });
+
+    //     select.addEventListener("change", ()=>{
+    //         const actualPath = select.value;
+    //         const preview = document.querySelector("#previewImage");
+    //         preview.innerHTML= actualPath ? `<img src="${actualPath}" alt="Preview">` : "";
+    //     })
+
+    // }catch(error){
+    //     console.error('Error obtaining images', error);
+    // } Corrigeme el codigo manteniendo lo que esta bien de aqui -->
